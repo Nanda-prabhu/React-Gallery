@@ -22,13 +22,13 @@ function App() {
   // empty array at the end for dependencies 
 
   return(
-    <div className="container mx-auto lg:ml-12">
+    <div className="container mx-auto">
 
       <Search searchText={(text) => setTerm(text)} />
 
       {!isLoading && images.length === 0 && <h1 className="text-5xl mx-auto text-center mt-32 text-gray-600">No Images Found </h1> }
 
-      {isLoading? <h1 className="text-6xl mx-auto text-center mt-32 text-gray-600">Loading... Hang on a sec.</h1> : <div className="grid grid-cols-3 gap-4 lg:gap-2 lg:px-12">
+      {isLoading? <h1 className="text-6xl mx-auto text-center mt-32 text-gray-600">Loading... Hang on a sec.</h1> : <div className="grid md:grid-cols-3 place-items-center grid-cols-1 gap-4 lg:gap-2 lg:px-12 mb-6">
         {images.map(image => (
           <Cards key={image.id} image={image}/> 
         ))}
